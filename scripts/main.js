@@ -94,7 +94,7 @@ const navbarBg = document.getElementById('navbar-bg');
 
 window.addEventListener('scroll', () => {
     if (navbar && navbarBg) {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 0) {
             navbar.classList.add('py-4');
             navbar.classList.remove('py-6');
             navbarBg.classList.remove('opacity-0');
@@ -110,7 +110,7 @@ window.addEventListener('scroll', () => {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5
+    threshold: 0.15
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
