@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Fetch</title>
+</head>
+<body>
+    <h1>Debug Fetch Test</h1>
+    <div id="result"></div>
+    
+    <script>
+        // Test fetching component files
+        const testPaths = [
+            'components/header.html',
+            '../components/header.html'
+        ];
+        
+        const resultDiv = document.getElementById('result');
+        
+        async function testFetch(path) {
+            try {
+                resultDiv.innerHTML += `<p>Testing: ${path}</p>`;
+                const response = await fetch(path);
+                resultDiv.innerHTML += `<p>Status: ${response.status}</p>`;
+                
+                if (response.ok) {
+                    const content = await response.text();
+                    resultDiv.innerHTML += `<p style="color: green;">Success: ${content.substring(0, 100)}...</p>`;
+                } else {
+                    resultDiv.innerHTML += `<p style="color: red;">Failed: ${response.statusText}</p>`;
+                }
+            } catch (error) {
+                resultDiv.innerHTML += `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+            resultDiv.innerHTML += '<hr>';
+        }
+        
+        // Test both paths
+        testPaths.forEach(testFetch);
+    </script>
+</body>
+</html>

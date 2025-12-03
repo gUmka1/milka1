@@ -1,0 +1,57 @@
+body {
+    font-family: 'Manrope', sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* Smooth Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Marquee Animation */
+.marquee-container {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.marquee-content {
+    display: inline-block;
+    animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Image Hover Zoom */
+.img-zoom-container {
+    overflow: hidden;
+}
+.img-zoom {
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.group:hover .img-zoom {
+    transform: scale(1.1);
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #fafafa;
+}
+::-webkit-scrollbar-thumb {
+    background: #d4d4d4;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #a3a3a3;
+}

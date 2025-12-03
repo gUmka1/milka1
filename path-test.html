@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Path Test</title>
+</head>
+<body>
+    <h1>Current Directory Test</h1>
+    <p>Current path: <span id="current-path"></span></p>
+    
+    <h2>Testing Relative Paths</h2>
+    <div id="results"></div>
+    
+    <script>
+        // Display current path
+        document.getElementById('current-path').textContent = window.location.pathname;
+        
+        // Test paths
+        const testPaths = [
+            'components/header.html',
+            '../components/header.html'
+        ];
+        
+        const resultsDiv = document.getElementById('results');
+        
+        async function testPath(path) {
+            try {
+                const response = await fetch(path);
+                const statusText = response.ok ? 
+                    `<span style="color: green;">✓ Success (${response.status})</span>` : 
+                    `<span style="color: red;">✗ Failed (${response.status})</span>`;
+                
+                resultsDiv.innerHTML += `<p>${path}: ${statusText}</p>`;
+            } catch (error) {
+                resultsDiv.innerHTML += `<p>${path}: <span style="color: red;">✗ Error (${error.message})</span></p>`;
+            }
+        }
+        
+        // Test all paths
+        testPaths.forEach(testPath);
+    </script>
+</body>
+</html>

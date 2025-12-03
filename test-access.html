@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Access</title>
+</head>
+<body>
+    <h1>Testing Component Access</h1>
+    <div id="test-component"></div>
+    
+    <script>
+        fetch('components/header.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(html => {
+                document.getElementById('test-component').innerHTML = html;
+                console.log('Component loaded successfully');
+            })
+            .catch(error => {
+                console.error('Error loading component:', error);
+                document.getElementById('test-component').innerHTML = '<p>Error: ' + error.message + '</p>';
+            });
+    </script>
+</body>
+</html>
