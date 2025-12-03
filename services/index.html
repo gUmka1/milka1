@@ -250,25 +250,41 @@
     }
 
     function initMainJS() {
-        // Create script element for main.js
-        const script = document.createElement('script');
-        script.src = '../scripts/main.js';
-        script.onload = function() {
-            console.log('Main JS loaded successfully');
-        };
-        document.body.appendChild(script);
-    }
+    const script = document.createElement('script');
+    script.src = 'scripts/main.js';
+    script.onload = function() {
+        console.log('Main JS loaded');
 
-    // Load components when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadComponents);
-    } else {
-        loadComponents();
-    }
+        // Динамика хедера
+        const navbar = document.getElementById('navbar');
+        const navbarBg = document.getElementById('navbar-bg');
+        if (navbar && navbarBg) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-6');
+                    navbarBg.classList.remove('opacity-0');
+                } else {
+                    navbar.classList.add('py-6');
+                    navbar.classList.remove('py-4');
+                    navbarBg.classList.add('opacity-0');
+                }
+            });
+        }
+    };
+    document.body.appendChild(script);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadComponents);
+} else {
+    loadComponents();
+}
     </script>
  </body>
 
 </html>
+
 
 
 
