@@ -154,40 +154,45 @@
     </section>
 
     <!-- Expert Advice Section -->
-    <section class="py-24 bg-stone-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl md:text-5xl font-serif text-stone-900 mb-4">Экспертный совет</h2>
-                <p class="text-stone-500 max-w-2xl mx-auto">Рекомендации наших мастеров для лучшего результата</p>
+    <section class="py-24 bg-stone-900 text-white relative overflow-hidden">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 left-0 w-96 h-96 bg-rose-500 rounded-full blur-3xl opacity-10 translate-x-1/3 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-amber-500 rounded-full blur-3xl opacity-10 translate-x-1/3 translate-y-1/3"></div>
+    
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+            <span class="text-rose-400 uppercase tracking-[0.2em] text-xs font-bold block mb-4">Экспертный совет</span>
+            <h2 class="text-4xl md:text-5xl font-serif mb-6">Экспертный совет</h2>
+            <p class="text-stone-400 font-light">Рекомендации наших мастеров для лучшего результата</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="bg-stone-800/50 p-8 rounded-[2rem] backdrop-blur-sm reveal">
+                <div class="text-5xl font-serif text-rose-400 mb-6">1</div>
+                <h3 class="text-xl font-serif text-white mb-4">Регулярный уход</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Рекомендуется делать маникюр каждые 2-3 недели для поддержания идеального состояния ногтей и кожи рук.
+                </p>
             </div>
             
-            <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-[2rem] backdrop-blur-sm reveal" style="transition-delay: 0ms;">
-                    <div class="text-5xl font-serif text-rose-400 mb-6">1</div>
-                    <h3 class="text-xl font-serif text-stone-900 mb-4">Регулярный уход</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">
-                        Рекомендуется делать маникюр каждые 2-3 недели для поддержания идеального состояния ногтей и кожи рук.
-                    </p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-[2rem] backdrop-blur-sm reveal" style="transition-delay: 100ms;">
-                    <div class="text-5xl font-serif text-rose-400 mb-6">2</div>
-                    <h3 class="text-xl font-serif text-stone-900 mb-4">Защита от внешних факторов</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">
-                        Используйте кремы для рук с SPF-фильтром и перчатки при работе с бытовой химией для сохранения результата.
-                    </p>
-                </div>
-                
-                <div class="bg-white p-8 rounded-[2rem] backdrop-blur-sm reveal" style="transition-delay: 200ms;">
-                    <div class="text-5xl font-serif text-rose-400 mb-6">3</div>
-                    <h3 class="text-xl font-serif text-stone-900 mb-4">Домашний уход</h3>
-                    <p class="text-stone-500 text-sm leading-relaxed">
-                        Регулярно наносите питательные масла и кремы для рук, делайте расслабляющие ванночки с эфирными маслами.
-                    </p>
-                </div>
+            <div class="bg-stone-800/50 p-8 rounded-[2rem] backdrop-blur-sm reveal" style="transition-delay: 100ms;">
+                <div class="text-5xl font-serif text-rose-400 mb-6">2</div>
+                <h3 class="text-xl font-serif text-white mb-4">Защита от внешних факторов</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Используйте кремы для рук с SPF-фильтром и перчатки при работе с бытовой химией для сохранения результата.
+                </p>
+            </div>
+            
+            <div class="bg-stone-800/50 p-8 rounded-[2rem] backdrop-blur-sm reveal" style="transition-delay: 200ms;">
+                <div class="text-5xl font-serif text-rose-400 mb-6">3</div>
+                <h3 class="text-xl font-serif text-white mb-4">Домашний уход</h3>
+                <p class="text-stone-400 text-sm leading-relaxed">
+                    Регулярно наносите питательные масла и кремы для рук, делайте расслабляющие ванночки с эфирными маслами.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <div id="component-footer"></div>
