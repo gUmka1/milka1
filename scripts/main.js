@@ -97,11 +97,11 @@ window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('py-4');
             navbar.classList.remove('py-6');
-            navbarBg.classList.remove('opacity-0');
+            navbarBg.style.opacity = '0.8'; // вместо remove('opacity-0')
         } else {
             navbar.classList.add('py-6');
             navbar.classList.remove('py-4');
-            navbarBg.classList.add('opacity-0');
+            navbarBg.style.opacity = '0.6'; // маленькая прозрачность вместо полного скрытия
         }
     }
 });
