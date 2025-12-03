@@ -92,7 +92,7 @@ if (bookingForm) {
 const navbar = document.getElementById('navbar');
 const navbarBg = document.getElementById('navbar-bg');
 
-function updateNavbar() {
+window.addEventListener('scroll', () => {
     if (navbar && navbarBg) {
         if (window.scrollY > 50) {
             navbar.classList.add('py-4');
@@ -104,13 +104,7 @@ function updateNavbar() {
             navbarBg.classList.add('opacity-0');
         }
     }
-}
-
-// Инициализация при загрузке страницы
-window.addEventListener('DOMContentLoaded', updateNavbar);
-
-// Обновление при скролле
-window.addEventListener('scroll', updateNavbar);
+});
 
 // Intersection Observer for Reveal Animation
 const observerOptions = {
